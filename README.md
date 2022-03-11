@@ -42,12 +42,12 @@ THEN I am presented with empty fields to enter a new note title and the note's t
 > 3) Will save and retrieve note data from a JSON file
 > 4) Front-end has been completed
 
-<!-- TODO -->
-> a. Build back-end
-> b. Connect back to front
-> c. Deploy entire application to Heroku
+### TODO
+> 1. Build back-end
+> 2. Connect back to front
+> 3. Deploy entire application to Heroku
 
-<!-- Getting started -->
+### Getting started
 
 > 1. On back-end, application should inculde `db.json` that will be used to store and retrieve notes using `fs` module
 
