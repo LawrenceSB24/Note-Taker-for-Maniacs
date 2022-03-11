@@ -57,11 +57,9 @@ THEN I am presented with empty fields to enter a new note title and the note's t
 
 > 3. API Routes
     > * `GET /api/routes` should read `db.json` file and return all saved notes as JSON
-
     > * `POST /api/notes` should
         * Receive new note to save on request body
         * Add it to `db.json` file
         * Return new note to the client
-
         * You'll need to find a way to give each note a unique name when it's saved
             * Look into npm packages that can do this for you
