@@ -11,9 +11,9 @@ const {
 } = require('../helpers/fsUtils');
 
 // GET route for retrieving ALL notes
-note.get('/api/notes', (req, res) => {
+note.get('/api/notes', (req, res) => 
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
-});
+);
 
 // GET route for a previous note
 note.get('/api/notes/:note_id', (req, res) => {
