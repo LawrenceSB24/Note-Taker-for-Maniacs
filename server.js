@@ -19,7 +19,7 @@ app.use(clog);
 // Middleware for parsin JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
-app.use("/api", api);
+
 
 app.use(express.static("public"));
 
@@ -30,7 +30,7 @@ app.get("/", (req, res) =>
 
 // GET route for notes page
 app.get("/notes", (req,res) => 
-    res.sendFile(path.join(__dirname, "./public/api/notes.html"))
+    res.sendFile(path.join(__dirname, "./public/notes.html"))
 );
 
 app.listen(PORT, () => 
