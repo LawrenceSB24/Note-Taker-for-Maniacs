@@ -9,18 +9,18 @@ const readFromFile = util.promisify(fs.readFile);
  * @param {object} info The information you are writing to the file 
  * @returns {void} Nothing (this might not be a good idea)
  */
-const writeToFile = (destination, content) => {
+const writeToFile = (destination, content) => 
     fs.writeFile(destination, JSON.stringify(content, null, 4), (err) => 
         err ? console.error(err) : console.info(`\nData has been written to ${destination}`)
     );
-};
+;
 
 /**
  * Function for reading previous notes and appending new information
  * @param {object} info The information you want to append to the file
  * @param {string} file The path to the file you want to save to 
  */
-const readAndAppend = (info, file) => {
+const readAndAppend = (info, file) => 
     fs.readAndAppend(file, 'utf8', (err,data) => {
         if (err) {
             console.error(err);
@@ -30,6 +30,5 @@ const readAndAppend = (info, file) => {
             writeToFile(file, parsedNote);
         }
     });
-};
 
 module.exports = {readFromFile, writeToFile, readAndAppend};
