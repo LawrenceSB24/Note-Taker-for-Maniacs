@@ -7,6 +7,9 @@ const path = require('path');
 // Imports api routes
 const api = require('./routes/taker.js');
 
+// Imports clog module
+const {clog} = require('./middleware/clog');
+
 // Constant for local host port
 const PORT = process.env.PORT || 3001;
 
