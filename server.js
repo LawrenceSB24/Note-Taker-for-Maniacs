@@ -1,11 +1,11 @@
 // Imports express
-const express = require('express');
+const express = require("express");
 // Imports path
-const path = require('path');
+const path = require("path");
 // Imports api routes
-const api = require('./routes/taker.js');
+const api = require("./routes/taker.js");
 // Imports clog module
-const {clog} = require('./middleware/clog');
+const {clog} = require("./middleware/clog");
 
 // Constant for local host port
 const PORT = process.env.PORT || 3001;
@@ -19,20 +19,20 @@ app.use(clog);
 // Middleware for parsin JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
-app.use('/api', api);
+app.use("/api", api);
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // GET route for homepage
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
-});
+app.get("/", (req, res) => 
+    res.sendFile(path.join(__dirname, "/public/index.html"))
+);
 
 // GET route for notes page
-app.get('/api/notes', (req,res) => {
-    res.sendFile(path.join(__dirname, 'public/notes.html'));
-});
+app.get("/api/notes", (req,res) => 
+    res.sendFile(path.join(__dirname, "public/notes.html"))
+);
 
-app.listen(PORT, () => {
-    console.log(`App is listening at http://localhost:${PORT} 🚀`);
-});
+app.listen(PORT, () => 
+    console.log(`App is listening at http://localhost:${PORT} 🚀`)
+);
