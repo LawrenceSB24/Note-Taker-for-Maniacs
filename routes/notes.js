@@ -12,13 +12,13 @@ const {
 
 // GET route for retrieving ALL notes
 note.get('/notes', (req, res) => 
-    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)))
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 );
 
 // GET route for a previous note
 note.get('/notes/:note_id', (req, res) => {
     const noteId = req.params.note_id;
-    readFromFile('../db/db.json')
+    readFromFile('./db/db.json')
         .then((data) => JSON.parse(data)
         .then((json) => {
             const result = json.filter((note) => note.note_id === noteId);
@@ -40,7 +40,7 @@ note.post('/notes', (req,res) => {
             note_id: uuidv4(),
         };
 
-        readAndAppend (newNote, '../db/db.json');
+        readAndAppend (newNote, './db/db.json');
         res.json(`Note has been added 🚀`);
     } else {
         res.error('Note has been corrupted');
@@ -50,11 +50,11 @@ note.post('/notes', (req,res) => {
 // DELETE route for previous notes
 note.delete('/notes/:note_id', (req,res) => {
     const noteId = req.params.note_id;
-    readFromFile('../db/db.json')
+    readFromFile('./db/db.json')
         .then((data) => JSON.parse(data))
         .then((json) => {
             const result = json.filter((note) => note.note_id !== noteId);
-            writeToFile('../db/db.json', result);
+            writeToFile('./db/db.json', result);
             res.json(`Item ${noteId} has been deleted 🗑️`)
         });
 });
