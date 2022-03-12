@@ -11,12 +11,12 @@ const {
 } = require('../helpers/fsUtils');
 
 // GET route for retrieving ALL notes
-note.get('/', (req, res) => {
+note.get('/api/notes', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 });
 
 // GET route for a previous note
-note.get('/:note_id', (req, res) => {
+note.get('/api/notes/:note_id', (req, res) => {
     const noteId = req.params.note_id;
     readFromFile('./db/db.json')
         .then((data) => JSON.parse(data)
@@ -29,7 +29,7 @@ note.get('/:note_id', (req, res) => {
 });
 
 // POST route for creating a new note
-note.post('/', (req,res) => {
+note.post('/api/notes', (req,res) => {
     console.log(req.body);
     const {title, text, note_id} = req.body;
 
