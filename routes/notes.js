@@ -11,12 +11,12 @@ const {
 } = require('../helpers/fsUtils');
 
 // GET route for retrieving ALL notes
-note.get('/api/notes', (req, res) => 
-    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
+note.get('/notes', (req, res) => 
+    readFromFile('./Develop/db/db.json').then((data) => res.json(JSON.parse(data)))
 );
 
 // GET route for a previous note
-note.get('/api/notes/:note_id', (req, res) => {
+note.get('/notes/:note_id', (req, res) => {
     const noteId = req.params.note_id;
     readFromFile('./db/db.json')
         .then((data) => JSON.parse(data)
@@ -29,7 +29,7 @@ note.get('/api/notes/:note_id', (req, res) => {
 });
 
 // POST route for creating a new note
-note.post('/api/notes', (req,res) => {
+note.post('/notes', (req,res) => {
     console.log(req.body);
     const {title, text, note_id} = req.body;
 
@@ -48,9 +48,9 @@ note.post('/api/notes', (req,res) => {
 });
 
 // DELETE route for previous notes
-note.delete('/api/notes/:note_id', (req,res) => {
+note.delete('/notes/:note_id', (req,res) => {
     const noteId = req.params.note_id;
-    readFromFile('./db/db.json')
+    readFromFile('./Develop/db/db.json')
         .then((data) => JSON.parse(data))
         .then((json) => {
             const result = json.filter((note) => note.note_id !== noteId);
