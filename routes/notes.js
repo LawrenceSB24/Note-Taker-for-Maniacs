@@ -8,17 +8,17 @@ const {
     readFromFile,
     readAndAppend,
     writeToFile
-} = require('../helpers/fsUtils');
+} = require('./Develop/helpers/fsUtils');
 
 // GET route for retrieving ALL notes
-note.get('/notes', (req, res) => 
+note.get('/api/notes', (req, res) => 
     readFromFile('./Develop/db/db.json').then((data) => res.json(JSON.parse(data)))
 );
 
 // GET route for a previous note
-note.get('/notes/:note_id', (req, res) => {
+note.get('/api/notes/:note_id', (req, res) => {
     const noteId = req.params.note_id;
-    readFromFile('./db/db.json')
+    readFromFile('./Develop/db/db.json')
         .then((data) => JSON.parse(data)
         .then((json) => {
             const result = json.filter((note) => note.note_id === noteId);
@@ -29,7 +29,7 @@ note.get('/notes/:note_id', (req, res) => {
 });
 
 // POST route for creating a new note
-note.post('/notes', (req,res) => {
+note.post('/api/notes', (req,res) => {
     console.log(req.body);
     const {title, text, note_id} = req.body;
 
@@ -40,7 +40,7 @@ note.post('/notes', (req,res) => {
             note_id: uuidv4(),
         };
 
-        readAndAppend (newNote, './db/db.json');
+        readAndAppend (newNote, './Develop/db/db.json');
         res.json(`Note has been added 🚀`);
     } else {
         res.error('Note has been corrupted');
@@ -48,13 +48,13 @@ note.post('/notes', (req,res) => {
 });
 
 // DELETE route for previous notes
-note.delete('/notes/:note_id', (req,res) => {
+note.delete('/api/notes/:note_id', (req,res) => {
     const noteId = req.params.note_id;
     readFromFile('./Develop/db/db.json')
         .then((data) => JSON.parse(data))
         .then((json) => {
             const result = json.filter((note) => note.note_id !== noteId);
-            writeToFile('./db/db.json', result);
+            writeToFile('./Develop/db/db.json', result);
             res.json(`Item ${noteId} has been deleted 🗑️`)
         });
 });
