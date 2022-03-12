@@ -1,12 +1,9 @@
 // Imports express
 const express = require('express');
-
 // Imports path
 const path = require('path');
-
 // Imports api routes
 const api = require('./routes/taker.js');
-
 // Imports clog module
 const {clog} = require('./middleware/clog');
 
