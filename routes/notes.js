@@ -1,7 +1,7 @@
 const note = require('express').Router();
 
 // Creates unique id for note
-const {v4 : uuidv4} = require('uuid');
+const uuidv4 = require('uuid');
 
 // Imports for read, write, and append functions
 const {
@@ -16,7 +16,7 @@ note.get('/api/notes', (req, res) =>
 );
 
 // GET route for a previous note
-note.get('/api/notes/:note_id', (req, res) => {
+note.get('/api/notes/:id', (req, res) => {
     const noteId = req.params.note_id;
     readFromFile('./db/db.json')
         .then((data) => JSON.parse(data)
@@ -31,13 +31,13 @@ note.get('/api/notes/:note_id', (req, res) => {
 // POST route for creating a new note
 note.post('/api/notes', (req,res) => {
     console.log(req.body);
-    const {title, text, note_id} = req.body;
+    const {title, text, id} = req.body;
 
     if (req.body) {
         const newNote = {
             title,
             text,
-            note_id: uuidv4(),
+            id: uuidv4(),
         };
 
         readAndAppend (newNote, './db/db.json');
@@ -48,7 +48,7 @@ note.post('/api/notes', (req,res) => {
 });
 
 // DELETE route for previous notes
-note.delete('/api/notes/:note_id', (req,res) => {
+note.delete('/api/notes/:id', (req,res) => {
     const noteId = req.params.note_id;
     readFromFile('./db/db.json')
         .then((data) => JSON.parse(data))
