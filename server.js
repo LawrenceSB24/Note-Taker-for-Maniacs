@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 });
 
 // GET route for notes page
-app.get('/notes', (req,res) => {
+app.get('/api/notes', (req,res) => {
     res.sendFile(path.join(__dirname, 'public/notes.html'));
 });
 
