@@ -17,11 +17,11 @@ note.get('/api/notes', (req, res) =>
 
 // GET route for a previous note
 note.get('/api/notes/:id', (req, res) => {
-    const noteId = req.params.note_id;
+    const noteId = req.params.id;
     readFromFile('./db/db.json')
         .then((data) => JSON.parse(data)
         .then((json) => {
-            const result = json.filter((note) => note.note_id === noteId);
+            const result = json.filter((note) => note.id === noteId);
             return result.length > 0
                 ? res.json(result)
                 : res.json('No previous note exists')
@@ -32,7 +32,6 @@ note.get('/api/notes/:id', (req, res) => {
 note.post('/api/notes', (req,res) => {
     console.log(req.body);
     const {title, text, id} = req.body;
-
     if (req.body) {
         const newNote = {
             title,
