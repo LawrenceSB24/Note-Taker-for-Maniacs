@@ -13,7 +13,6 @@ A note taking application that uses Express.js to modify and save notes using ex
 - [Testing](#testing)
 - [Questions](#questions)
 
-===================================================================
 
 ## User Story
 ```
@@ -21,7 +20,6 @@ As A small business owner
 I WANT to be able  to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
-=====================================================================
 
 ## Acceptance Criteria
 ```
@@ -50,14 +48,12 @@ WHEN I click on the Write icon in the navigation at the top of the page
 
 THEN I am presented with empty fields to enter a new note title and the note's text in the right-hand column
 ```
-====================================================================
 
 ## Heroku live page
 
 This is the link to the live page as provided by heroku:
 (https://stormy-falls-18022.herokuapp.com/)
 
-=================================================================
 
 ## Usage
 To run this application, refer to the following:
@@ -70,12 +66,10 @@ To run this application, refer to the following:
 
 > 4. Any previous notes on the page will be displayed on the left
 
-=================================================================
 
 ## Testing
 Several notes have been created for testing functionality. Potential deletion of notes using the trash icon still in progress.
 
-=============================================================
 
 ## Questions
 For further questions, please contact me at:
@@ -83,11 +77,9 @@ For further questions, please contact me at:
 [Github: ](https://github.com/LawrenceSB24)
 [Email: ](lawrs2022@gmail.com)
 
-==============================================================
 
 ### Disclaimer
 Depending on what point you see this, I still need to fix some issues with the saving functionality of the note taker
 
-====================================================
 ## License
 This project has been issued under the MIT License
