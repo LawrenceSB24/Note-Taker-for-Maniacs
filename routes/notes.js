@@ -31,7 +31,6 @@ note.get('/api/notes/:id', (req, res) => {
 // POST route for creating a new note
 note.post('/api/notes', (req,res) => {
     console.log(req.body);
-    let noteTake = [];
     const {title, text} = req.body;
     if (req.body) {
         const newNote = {
@@ -39,8 +38,7 @@ note.post('/api/notes', (req,res) => {
             text,
             id: uuidv4(),
         };
-        noteTake.push(newNote);
-        readAndAppend (noteTake, './db/db.json');
+        readAndAppend (newNote, './db/db.json');
         res.json(`Note has been added 🚀`);
     } else {
         res.error('Note has been corrupted');
