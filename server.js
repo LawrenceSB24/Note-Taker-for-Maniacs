@@ -23,13 +23,13 @@ app.use('/api', api);
 
 app.use(express.static("public"));
 
-// GET route for homepage
-app.get("/", (req, res) => 
+// GET route for notes page
+app.get("/notes", (req,res) => 
     res.sendFile(path.join(__dirname, "./public/index.html"))
 );
 
 // GET route for notes page
-app.get("/notes", (req,res) => 
+app.get("/api/notes", (req,res) => 
     res.sendFile(path.join(__dirname, "./public/notes.html"))
 );
 
