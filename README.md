@@ -74,8 +74,8 @@ Several notes have been created for testing functionality. Potential deletion of
 ## Questions
 For further questions, please contact me at:
 
--Github: (https://github.com/LawrenceSB24)
--Email: (lawrs2022@gmail.com)
+- Github: (https://github.com/LawrenceSB24)
+- Email: (lawrs2022@gmail.com)
 
 
 ### Disclaimer
