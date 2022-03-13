@@ -3,7 +3,7 @@ const express = require("express");
 // Imports path
 const path = require("path");
 // Imports api routes
-const api = require("./routes/taker.js");
+// const api = require("./routes/taker.js");
 // Imports clog module
 const {clog} = require("./middleware/clog");
 
@@ -19,7 +19,6 @@ app.use(clog);
 // Middleware for parsin JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
-app.use('/api', api);
 
 app.use(express.static("public"));
 
@@ -29,7 +28,7 @@ app.get('*', (req, res) =>
 );
 
 // GET route for notes page
-app.get('/notes', (req,res) => 
+app.get('/api/notes', (req,res) => 
     res.sendFile(path.join(__dirname, "./public/notes.html"))
 );
 
