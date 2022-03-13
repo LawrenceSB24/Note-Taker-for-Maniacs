@@ -2,7 +2,7 @@ const fs = require('fs');
 const util = require('util');
 
 // Promise version of fs.readFile
-const readFromFile = util.promisify(fs.readFile);
+const readFromFile = util.promisify(fs.readFileSync);
 /**
  * Function for writing data to JSON file given a destination and information
  * @param {string} destination The file you are writing to (in this case it will be notes.html) 
@@ -10,7 +10,7 @@ const readFromFile = util.promisify(fs.readFile);
  * @returns {void} Nothing (this might not be a good idea)
  */
 const writeToFile = (destination, content) => 
-    fs.writeFile(destination, JSON.stringify(content, null, 4), (err) => 
+    fs.writeFileSync(destination, JSON.stringify(content, null, 4), (err) => 
         err ? console.error(err) : console.info(`\nData has been written to ${destination}`)
     );
 ;
