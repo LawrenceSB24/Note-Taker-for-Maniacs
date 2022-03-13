@@ -1,5 +1,20 @@
 # Note-Taker-for-Maniacs
-A note taking application that uses Express.js to modify and save notes
+==================================================================
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+
+A note taking application that uses Express.js to modify and save notes using express
+====================================================================
+
+## Table of Contents
+
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Heroku Live Deployment](#heroku-live-page)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Questions](#questions)
+
+===================================================================
 
 ## User Story
 ```
@@ -7,6 +22,7 @@ As A small business owner
 I WANT to be able  to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
+=====================================================================
 
 ## Acceptance Criteria
 ```
@@ -35,31 +51,44 @@ WHEN I click on the Write icon in the navigation at the top of the page
 
 THEN I am presented with empty fields to enter a new note title and the note's text in the right-hand column
 ```
+====================================================================
 
-## Developer Notes (to be taken down prior to submission)
-> 1) Modifying starter code to create app for writing and saving notes
-> 2) Uses Express.js back-end
-> 3) Will save and retrieve note data from a JSON file
-> 4) Front-end has been completed
+## Heroku live page
 
-### TODO
-> 1. Build back-end
-> 2. Connect back to front
-> 3. Deploy entire application to Heroku
+This is the link to the live page as provided by heroku:
+(https://stormy-falls-18022.herokuapp.com/)
 
-### Getting started
+=================================================================
 
-> 1. On back-end, application should inculde `db.json` that will be used to store and retrieve notes using `fs` module
+## Usage
+To run this application, refer to the following:
 
-> 2. HTML Routes
-    > * `GET /notes` should return `notes.html` file
-    > * `GET *` should return `index.html`
+> 1. For installing all the dependencies, run `npm i` for all packages or `npm install` for adding individual packages
 
-> 3. API Routes
-    > * `GET /api/routes` should read `db.json` file and return all saved notes as JSON
-    > * `POST /api/notes` should
-        * Receive new note to save on request body
-        * Add it to `db.json` file
-        * Return new note to the client
-        * You'll need to find a way to give each note a unique name when it's saved
-            * Look into npm packages that can do this for you
+> 2. On the main homepage, there is a "Get Started" button. Once clicked, it will bring you to the notes page
+
+> 3. Once there, text and title fields are present to populate the note. After you have finished typing, click the save icon button on the top right corner.
+
+> 4. Any previous notes on the page will be displayed on the left
+
+=================================================================
+
+## Testing
+Several notes have been created for testing functionality. Potential deletion of notes using the trash icon still in progress.
+
+=============================================================
+
+## Questions
+For further questions, please contact me at:
+
+[Github: ](https://github.com/LawrenceSB24)
+[Email: ](lawrs2022@gmail.com)
+
+==============================================================
+
+### Disclaimer
+Depending on what point you see this, I still need to fix some issues with the saving functionality of the note taker
+
+====================================================
+## License
+This project has been issued under the MIT License
